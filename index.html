@@ -41,13 +41,13 @@
   <body class="bg-slate-50 text-slate-900 h-screen overflow-hidden">
     <!-- 
       ATENÇÃO: Para que a API Gemini funcione no navegador, você DEVE substituir 
-      'YOUR_GEMINI_API_KEY_HERE' pela sua chave de API real do Google Gemini.
+      'MINHA_CHAVE_DE_API_GEMINI_AQUI' pela sua chave de API real do Google Gemini.
       Esta é uma simulação de variável de ambiente para um ambiente de navegador puro.
     -->
     <script>
       window.process = window.process || {};
       window.process.env = window.process.env || {};
-      window.process.env.API_KEY = 'YOUR_GEMINI_API_KEY_HERE'; // <-- SUBSTITUA ISSO PELA SUA CHAVE REAL!
+      window.process.env.API_KEY = 'MINHA_CHAVE_DE_API_GEMINI_AQUI'; // <-- SUBSTITUA ISSO PELA SUA CHAVE REAL!
     </script>
     <div id="root" class="h-full"></div>
     <script type="module" src="/index.tsx"></script>

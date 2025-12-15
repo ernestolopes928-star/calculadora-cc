@@ -3,7 +3,6 @@ import { Sidebar } from './components/Sidebar';
 import { FileUpload } from './components/FileUpload';
 import { HistoryList } from './components/HistoryList';
 import { ReportView } from './components/ReportView';
-import { LoginScreen } from './components/LoginScreen';
 import { StorageService } from './services/storageService';
 import { GeminiService } from './services/geminiService';
 import { DocumentRecord, DocType } from './types';
@@ -11,46 +10,17 @@ import { Icons } from './components/Icons';
 
 type ViewState = 'new' | 'history' | 'report';
 
-const ACCESS_KEY = 'adm.cc.app';
-const AUTH_STORAGE_KEY = 'adm_auth_token_v1';
-
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeView, setActiveView] = useState<ViewState>('new');
   const [documents, setDocuments] = useState<DocumentRecord[]>([]);
   const [selectedDocId, setSelectedDocId] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Check authentication on mount
-  useEffect(() => {
-    const storedAuth = sessionStorage.getItem(AUTH_STORAGE_KEY);
-    if (storedAuth === ACCESS_KEY) {
-      setIsAuthenticated(true);
-    }
-  }, []);
-
   // Load documents on mount
   useEffect(() => {
-    if (isAuthenticated) {
-      setDocuments(StorageService.getAll());
-    }
-  }, [isAuthenticated]);
-
-  const handleLogin = (key: string): boolean => {
-    if (key === ACCESS_KEY) {
-      sessionStorage.setItem(AUTH_STORAGE_KEY, key);
-      setIsAuthenticated(true);
-      return true;
-    }
-    return false;
-  };
-
-  const handleLogout = () => {
-    sessionStorage.removeItem(AUTH_STORAGE_KEY);
-    setIsAuthenticated(false);
-    setSidebarOpen(false);
-  };
+    setDocuments(StorageService.getAll());
+  }, []);
 
   const handleFileSelect = async (file: File, type: DocType, content: string) => {
     setIsProcessing(true);
@@ -106,11 +76,6 @@ export default function App() {
 
   const selectedDoc = documents.find(d => d.id === selectedDocId);
 
-  // Render Login Screen if not authenticated
-  if (!isAuthenticated) {
-    return <LoginScreen onLogin={handleLogin} />;
-  }
-
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden">
       {/* Mobile Sidebar Overlay */}
@@ -148,14 +113,7 @@ export default function App() {
         {/* Scrollable Area */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-10 relative">
           
-          {/* Logout Button (Desktop absolute top right, handy for quick exit) */}
-          <button 
-             onClick={handleLogout}
-             className="absolute top-6 right-6 z-10 hidden md:flex items-center gap-2 px-3 py-1.5 bg-slate-200 hover:bg-red-100 hover:text-red-700 text-slate-600 rounded-lg text-xs font-medium transition-colors"
-          >
-            <Icons.Lock size={14} />
-            Sair
-          </button>
+          {/* O botão de Logout foi removido, pois não há mais tela de login. */}
 
           {activeView === 'new' && (
             <div className="animate-fade-in max-w-4xl mx-auto">

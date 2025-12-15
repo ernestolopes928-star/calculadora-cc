@@ -14,9 +14,6 @@ import {
   TrendingUp,
   AlertOctagon,
   Download,
-  Lock,
-  Key,
-  ArrowRight
 } from 'lucide-react';
 
 // Re-exporting specifically what we need
@@ -35,7 +32,4 @@ export const Icons = {
   TrendingUp,
   AlertOctagon,
   Download,
-  Lock,
-  Key,
-  ArrowRight
 };
