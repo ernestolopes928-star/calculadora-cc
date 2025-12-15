@@ -11,7 +11,7 @@ import { Icons } from './components/Icons';
 
 type ViewState = 'new' | 'history' | 'report';
 
-const ACCESS_KEY = '&adm.cc.app&1';
+const ACCESS_KEY = 'adm.cc.app';
 const AUTH_STORAGE_KEY = 'adm_auth_token_v1';
 
 export default function App() {
