@@ -138,11 +138,7 @@ export default function App() {
           <button onClick={() => setSidebarOpen(true)} className="p-2 -ml-2 text-slate-600">
             <Icons.Menu size={24} />
           </button>
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Emblem_of_Angola.svg/100px-Emblem_of_Angola.svg.png" 
-            alt="Logo" 
-            className="h-10 w-auto ml-2 object-contain" 
-          />
+          {/* Logo da insígnia removida */}
           <div className="ml-3 flex flex-col">
             <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Governo de Angola</span>
             <span className="font-bold text-slate-800 text-sm leading-tight">ADM C. Cuanavale</span>

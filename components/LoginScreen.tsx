@@ -30,11 +30,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLogin }) => {
         {/* Header */}
         <div className="bg-slate-50 p-8 border-b border-slate-100 flex flex-col items-center text-center">
           <div className="w-20 h-20 bg-white rounded-xl shadow-md p-2 mb-4 flex items-center justify-center">
-             <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Emblem_of_Angola.svg/240px-Emblem_of_Angola.svg.png" 
-                alt="Insígnia de Angola" 
-                className="w-full h-full object-contain"
-              />
+             {/* Logo da insígnia removida */}
           </div>
           <p className="text-xs text-slate-500 uppercase tracking-widest mb-1 font-semibold">Governo de Angola</p>
           <h1 className="text-xl font-bold text-slate-800">ADM Municipal<br/>do C. Cuanavale</h1>

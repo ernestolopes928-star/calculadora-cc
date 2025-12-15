@@ -12,13 +12,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onNewAnalysis, onViewHistory, 
   return (
     <div className={`bg-slate-900 text-white flex flex-col h-full ${className}`}>
       <div className="p-6 border-b border-slate-800 flex items-center gap-3">
-        <div className="w-12 h-12 flex-shrink-0 bg-white rounded-lg p-1.5 flex items-center justify-center shadow-lg shadow-black/20">
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Emblem_of_Angola.svg/240px-Emblem_of_Angola.svg.png" 
-            alt="Insígnia de Angola" 
-            className="w-full h-full object-contain"
-          />
-        </div>
+        {/* Logo da insígnia removida */}
         <div className="flex flex-col">
           <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Governo de Angola</span>
           <h1 className="font-bold text-sm leading-tight text-white">ADM Municipal<br/>do C. Cuanavale</h1>
